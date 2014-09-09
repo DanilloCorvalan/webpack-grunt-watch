@@ -1,0 +1,21 @@
+{
+  "name": "city-events",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "webpack": "^1.4.0-beta4",
+    "grunt-webpack": "^1.0.8",
+    "grunt": "^0.4.5",
+    "webpack-dev-server": "^1.6.4"
+  },
+  "devDependencies": {
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-simple-watch": "^0.1.2"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "author": "Danillo Corvalan",
+  "license": "ISC"
+}
