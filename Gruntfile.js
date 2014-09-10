@@ -7,25 +7,34 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     webpack: {
       default: {
-        entry: "./entry.js",
+        entry: "./components/app.jsx",
         output: {
           filename: "bundle.js",
         },
         stats: {
           colors: true,
-          modules: true,
+          modules: false,
           reasons: true
         },
         progress: true,
         failOnError: false,
         watch: false,
         keepalive: false,
+        resolve: {
+          extensions: ['', '.js', '.jsx']
+        },
+        module: {
+          loaders: [
+            { test: /\.css$/, loader: "style!css" },
+            { test: /\.jsx$/, loader: 'jsx' }
+          ]
+        }
       }
     },
 
     watch: {
       wp: {
-        files: ['entry.js'],
+        files: ['components/*.jsx'],
         tasks: ['webpack'],
         options: {
           spawn: false,
@@ -36,6 +45,6 @@ module.exports = function(grunt) {
   });
 
   // Default task(s).
-  grunt.registerTask('default', ['webpack:default', 'watch']);
+  grunt.registerTask('default', ['webpack:default', 'watch:wp']);
   grunt.registerTask('watch_webpack', ['watch:rahh']);
 };
