@@ -36,6 +36,6 @@ module.exports = function(grunt) {
   });
 
   // Default task(s).
-  grunt.registerTask('default', ['webpack:default', 'watch']);
+  grunt.registerTask('default', ['webpack:default', 'watch:wp']);
   grunt.registerTask('watch_webpack', ['watch:rahh']);
 };
